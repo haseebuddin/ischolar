@@ -52,18 +52,10 @@ $(document).ready(function () {
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    // autoplay: true,
-    // autoplaySpeed: 1000,
-    asNavFor: ".slider-wrap",
+    autoplay: true,
+    autoplaySpeed: 5000,
+    asNavFor: ".slider-wrap,.slider-x",
   });
-
-  // $(".slider-wrap").slick({
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   vertical: true,
-  //   arrows: false,
-  //   fade: false,
-  // });
 
   $(".slider-wrap").slick({
     slidesToShow: 3,
@@ -72,10 +64,54 @@ $(document).ready(function () {
     infinite: false,
     vertical: true,
     focusOnSelect: true,
-    asNavFor: ".mobileWrapSlider",
+    asNavFor: ".mobileWrapSlider,.slider-x",
   });
   $(".slider-wrap").on("click", ".slick-slide", function () {
     $(".mobileWrapSlider").slickGoTo($(this).attr("index"));
+  });
+  $(".slider-x").slick({
+    asNavFor: ".slider-wrap,.mobileWrapSlider",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    fade: true,
+    arrows: false,
+  });
+  $(".corefeatures").slick({
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 2000,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
   });
 
   //=========== HEADER SCROLL FUNCTION STARTS
@@ -88,6 +124,21 @@ $(document).ready(function () {
       $(".header-div").removeClass("fixed-header");
       // $('.tphead').slideDown(100);
     }
+  });
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() >= 100) {
+      $(".scrolltopTop").fadeIn(200);
+      // $('.tphead').slideUp(100);
+    } else {
+      $(".scrolltopTop").fadeOut(200);
+      // $('.tphead').slideDown(100);
+    }
+  });
+
+  $(".scrolltopTop").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+    return false;
   });
 });
 

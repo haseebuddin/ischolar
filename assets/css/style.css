@@ -367,7 +367,8 @@ li {
 .sliderbuddy ul.slick-dots li:nth-child(4) button:before {
   content: "Premium";
 }
-.whatsets h2 {
+.whatsets h2,
+.studybuddies-section h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 34px;
@@ -543,6 +544,7 @@ li {
   text-align: center;
   min-height: 250px;
   border-radius: 10px;
+  margin: 70px 0 70px 0px;
 }
 .iconbox_parent:hover {
   background: #00d179;
@@ -625,7 +627,7 @@ li {
 }
 .corefeatures-section .mainhd {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   font-size: 34px;
   font-weight: 600;
 }
@@ -722,7 +724,34 @@ footer p {
 .mobile-nav {
   display: none;
 }
+.slider-x-inner img {
+  width: 100%;
+}
 
+.scrolltopTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: white;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  -moz-box-shadow: 0 0 26px #0000001a;
+  -webkit-box-shadow: 0 0 26px #0000001a;
+  -ms-box-shadow: 0 0 26px #0000001a;
+  box-shadow: 0 0 26px #0000001a;
+}
+.scrolltopTop img {
+  width: 100%;
+}
 @media (max-width: 1024px) {
   .mobile-nav {
     display: block;
@@ -771,6 +800,7 @@ footer p {
   .slider-wrap .slick-slide img {
     max-width: 90%;
   }
+
   .aboutscholar {
     padding: 60px 0;
   }
@@ -905,13 +935,14 @@ footer p {
     margin-bottom: 20px;
   }
   .contactform-section .hashbox p {
-    font-size: 28px;
+    font-size: 24px;
   }
   .aboutscholar h2,
   .whatsets h2,
+  .studybuddies-section h2,
   .corefeatures-section .mainhd,
   .contact-formhd h3 {
-    font-size: 26px;
+    font-size: 22px;
   }
   .aboutscholar .aboutinner {
     margin: 30px;
@@ -924,7 +955,7 @@ footer p {
     max-width: 120px;
   }
   .iconbox_parent p {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
